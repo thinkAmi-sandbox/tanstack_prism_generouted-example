@@ -1,0 +1,175 @@
+openapi: 3.0.0
+info:
+  title: OpenAPI schema
+  version: 0.0.1
+servers:
+  - url: http://localhost:8301
+components:
+  schemas:
+    ApplesResponse:
+      type: object
+      required:
+        - apples
+      properties:
+        apples:
+          type: array
+          items:
+            $ref: '#/components/schemas/Apple'
+    Apple:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        colorId:
+          type: integer
+    Color:
+      type: object
+      required:
+        - id
+        - colorName
+      properties:
+        id:
+          type: integer
+        colorName:
+          type: string
+    FishesGetResponse:
+      type: object
+      required:
+        - fishes
+      properties:
+        fishes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Fish'
+    FishesPostResponse:
+      type: object
+      required:
+        - fish
+      properties:
+        fish:
+          $ref: '#/components/schemas/Fish'
+    Fish:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          x-faker: number.int
+        name:
+          type: string
+          x-faker: animal.fish
+    FishParams:
+      type: object
+      properties:
+        name:
+          type: string
+
+paths:
+  /apples:
+    get:
+      operationId: fetchApples
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplesResponse'
+              examples:
+                case1:
+                  summary: case1
+                  value:
+                    apples:
+                      - id: 1
+                        name: 'シナノゴールド'
+                        colorId: 1
+                      - id: 2
+                        name: 'シナノドルチェ'
+                        colorId: 2
+                case2:
+                  summary: case2
+                  value:
+                    apples:
+                      - id: 1
+                        name: 'シナノゴールド'
+                        colorId: 1
+                      - id: 2
+                        name: 'シナノドルチェ'
+                        colorId: 2
+                      - id: 3
+                        name: 'シナノピッコロ'
+                        colorId: 2
+  /color/{colorId}:
+    get:
+      operationId: fetchColor
+      parameters:
+        - name: colorId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Color'
+              examples:
+                case1:
+                  summary: case1
+                  value:
+                    id: 1
+                    colorName: '黄色'
+                case2:
+                  summary: case2
+                  value:
+                    id: 2
+                    colorName: '赤'
+  /fishes:
+    get:
+      operationId: fetchFishes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FishesGetResponse'
+              examples:
+                case1:
+                  summary: case1
+                  value:
+                    apples:
+                      - id: 1
+                        name: 'さんま'
+                      - id: 2
+                        name: 'いわし'
+    post:
+      operationId: createFish
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FishParams'
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FishesPostResponse'
+              examples:
+                case1:
+                  summary: case1
+                  value:
+                    fish:
+                      id: 1
+                      name: '鯖'
