@@ -15,6 +15,17 @@ export type Path =
   | `/create/use_state/create_and_reload`
   | `/initial_load/tanstack_query`
   | `/initial_load/use_state`
+  | `/query_key/factory/duplicate_keys/each_import`
+  | `/query_key/factory/duplicate_keys/merge`
+  | `/query_key/factory/merge_keys`
+  | `/query_key/factory/single_store`
+  | `/query_key/multiple_elements/array/all_keys`
+  | `/query_key/multiple_elements/array/first_key`
+  | `/query_key/multiple_elements/array/first_key_with_exact`
+  | `/query_key/multiple_elements/object`
+  | `/query_key/selectable_reload`
+  | `/query_key/single_element/different_string`
+  | `/query_key/single_element/same_string`
 
 export type Params = {
   
