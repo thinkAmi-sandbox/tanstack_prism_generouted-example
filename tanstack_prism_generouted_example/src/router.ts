@@ -26,6 +26,11 @@ export type Path =
   | `/query_key/selectable_reload`
   | `/query_key/single_element/different_string`
   | `/query_key/single_element/same_string`
+  | `/use_query/select_option/difference/with_select`
+  | `/use_query/select_option/difference/without_select`
+  | `/use_query/select_option/filter_data`
+  | `/use_query/select_option/with_is_refetching/notify_on_change_props`
+  | `/use_query/select_option/with_is_refetching/select_only`
 
 export type Params = {
   
