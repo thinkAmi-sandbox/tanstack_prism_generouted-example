@@ -1,4 +1,7 @@
 openapi: 3.0.0
+x-json-schema-faker:
+  min-items: 3
+  max-items: 3
 info:
   title: OpenAPI schema
   version: 0.0.1
@@ -73,6 +76,7 @@ components:
 
 paths:
   /apples:
+
     get:
       operationId: fetchApples
       responses:
