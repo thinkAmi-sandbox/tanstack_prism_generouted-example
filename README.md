@@ -19,3 +19,4 @@
 - [Reactにて、useStateやuseEffectを使っていたところをTanstack Queryに置き換えてみた - メモ的な思考的な](https://thinkami.hatenablog.com/entry/2023/08/15/231403)
 - [Tanstack Queryの Query Key について調べてみた - メモ的な思考的な](https://thinkami.hatenablog.com/entry/2023/08/17/210928)
 - [Tanstack QueryにおけるuseQueryのselectオプションを調べてみた - メモ的な思考的な](https://thinkami.hatenablog.com/entry/2023/08/27/213630)
+- [Tanstack Queryにて、useQueryのstaleTimeとcacheTimeの挙動を確認してみた - メモ的な思考的な](https://thinkami.hatenablog.com/entry/2023/09/28/223238)
