@@ -15,8 +15,6 @@ export type Path =
   | `/create/use_state/create_and_reload`
   | `/initial_load/tanstack_query`
   | `/initial_load/use_state`
-  | `/polling/default_settings`
-  | `/polling/stale_time`
   | `/query_key/factory/duplicate_keys/each_import`
   | `/query_key/factory/duplicate_keys/merge`
   | `/query_key/factory/merge_keys`
@@ -28,7 +26,8 @@ export type Path =
   | `/query_key/selectable_reload`
   | `/query_key/single_element/different_string`
   | `/query_key/single_element/same_string`
-  | `/time/polling`
+  | `/time/polling/default_settings`
+  | `/time/polling/stale_time`
   | `/time/stale_and_invalidate`
   | `/time/stale_and_invalidate/clock_only`
   | `/time/stale_time`
